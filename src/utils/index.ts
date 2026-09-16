@@ -338,7 +338,7 @@ export const workoutProgram: Record<number, WorkoutDay> = {
     // Legs
     warmup: [
       { name: 'Bodyweight RDLs', sets: 2, reps: 30 },
-      { name: 'Bodyweight  squats', sets: 2, reps: 20 },
+      { name: 'Bodyweight squats', sets: 2, reps: 20 },
     ],
     workout: [
       { name: 'Romanian deadlifts', sets: 3, reps: 10 },

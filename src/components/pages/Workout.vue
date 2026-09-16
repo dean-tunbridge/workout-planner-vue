@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { workoutProgram, exerciseDescriptions } from '../../utils'
+import {
+  workoutProgram,
+  exerciseDescriptions,
+  type Exercise,
+} from '../../utils'
 import Portal from './Portal.vue'
 
 const currWorkout = 4
 
-type Exercises = keyof typeof exerciseDescriptions
-
 const { workout, warmup } = workoutProgram[currWorkout]
 
-let currExercise = ref<Exercises | null>(null)
+let currExercise = ref<Exercise | null>(null)
 
 let exerciseDescription = computed(() => {
   if (currExercise.value === null) {
