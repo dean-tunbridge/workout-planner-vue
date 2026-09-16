@@ -1,14 +1,16 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { workoutProgram, exerciseDescriptions } from '../../utils'
 import Portal from './Portal.vue'
 
 const currWorkout = 4
 
-let currExercise = ref(null)
-
 const { workout, warmup } = workoutProgram[currWorkout]
-let exerciseDescription = exerciseDescriptions[currExercise]
+
+let currExercise = ref(null)
+let exerciseDescription = computed(
+  () => exerciseDescriptions[currExercise.value],
+)
 
 function handleCloseModal() {
   currExercise.value = null
