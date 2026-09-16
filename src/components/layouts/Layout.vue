@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <header class="text-gradient">
     <h1 class="text-gradient">HEADER</h1>
@@ -16,8 +18,6 @@
     </a>
   </footer>
 </template>
-
-<script setup lang="ts"></script>
 
 <style scoped>
 header,

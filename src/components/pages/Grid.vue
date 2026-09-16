@@ -1,11 +1,13 @@
-<script setup>
+<script setup lang="ts">
 import { workoutProgram } from '../../utils'
 
-defineProps({
-  handleSelectWorkout: Function,
-  firstIncompleteWorkoutIndex: Number,
-  handleResetPlan: Function,
-})
+interface Props {
+  handleSelectWorkout: (index: number) => void
+  firstIncompleteWorkoutIndex: number
+  handleResetPlan: (payload: PointerEvent) => void
+}
+
+const props = defineProps<Props>()
 
 const workoutTypes = ['Push', 'Pull', 'Legs']
 </script>
