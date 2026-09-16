@@ -10,7 +10,7 @@
     <a href="#" target="blank">
       <img
         alt="profile pic"
-        src="https://www.istockphoto.com/photo/bengal-cat-lying-on-sofa-and-smiling-gm1325997570-410841353" />
+        src="https://images.unsplash.com/photo-1774021804386-daa60d7a6043?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
       <p>Dean Lee</p>
       <i class="fa-brands fa-github"></i>
     </a>
