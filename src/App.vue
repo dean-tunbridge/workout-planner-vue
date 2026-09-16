@@ -10,7 +10,7 @@ const handleSelectWorkout = (index: number) => {
 
 const firstIncompleteWorkoutIndex = 0
 
-const handleResetPlan = (event: PointerEvent) => {
+const handleResetPlan = () => {
   console.log('Reset plan')
 }
 
