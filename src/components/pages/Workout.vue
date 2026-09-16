@@ -5,10 +5,14 @@ import Portal from './Portal.vue'
 
 const currWorkout = 4
 
+let currExercise = ref(null)
+
 const { workout, warmup } = workoutProgram[currWorkout]
 let exerciseDescription = exerciseDescriptions[currExercise]
 
-let currExercise = ref()
+function handleCloseModal() {
+  currExercise.value = null
+}
 </script>
 
 <template>
@@ -19,7 +23,9 @@ let currExercise = ref()
         <small>Description</small>
         <p>{{ exerciseDescription }}</p>
       </div>
-      <button>Close <i class="fa-solid fa-xmark"></i></button>
+      <button @click="handleCloseModal">
+        Close <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
   </Portal>
   <section id="workout-card">
@@ -41,7 +47,12 @@ let currExercise = ref()
         :key="warmupIndex">
         <div class="grid-name">
           <p>{{ warmups.name }}</p>
-          <button>
+          <button
+            @click="
+              () => {
+                currExercise = warmups.name
+              }
+            ">
             <i class="fa-regular fa-circle-question"></i>
           </button>
           <p>{{ warmups.sets }}</p>
@@ -59,7 +70,12 @@ let currExercise = ref()
           :key="workoutIndex">
           <div class="grid-name">
             <p>{{ workouts.name }}</p>
-            <button>
+            <button
+              @click="
+                () => {
+                  currExercise = workouts.name
+                }
+              ">
               <i class="fa-regular fa-circle-question"></i>
             </button>
             <p>{{ workouts.sets }}</p>
