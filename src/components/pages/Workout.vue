@@ -32,7 +32,7 @@ function handleCloseModal() {
   </Portal>
   <section id="workout-card">
     <div class="plan-card card">
-      <div class="plan-card header">
+      <div class="plan-card-header">
         <p>Day {{ currWorkout < 9 ? '0' + currWorkout : currWorkout }}</p>
         <i class="fa-solid fa-dumbbell"></i>
       </div>
@@ -42,7 +42,7 @@ function handleCloseModal() {
       <h4 class="grid-name">Warmup</h4>
       <h6>Sets</h6>
       <h6>Reps</h6>
-      <h6 class="grid-weight">Weight</h6>
+      <h6 class="grid-weights">Weight</h6>
       <div
         class="workout-grid-row"
         v-for="(warmups, warmupIndex) in warmup"
@@ -57,37 +57,38 @@ function handleCloseModal() {
             ">
             <i class="fa-regular fa-circle-question"></i>
           </button>
-          <p>{{ warmups.sets }}</p>
-          <p>{{ warmups.reps }}</p>
-          <input class="grid-weights" placeholder="14kg" type="text" disabled />
         </div>
-        <div class="workout-grid-line"></div>
-        <h4 class="grid-name">Workout</h4>
-        <h6>Sets</h6>
-        <h6>Reps</h6>
-        <h6 class="grid-weight">Weight</h6>
-        <div
-          class="workout-grid-row"
-          v-for="(workouts, workoutIndex) in warmup"
-          :key="workoutIndex">
-          <div class="grid-name">
-            <p>{{ workouts.name }}</p>
-            <button
-              @click="
-                () => {
-                  currExercise = workouts.name
-                }
-              ">
-              <i class="fa-regular fa-circle-question"></i>
-            </button>
-            <p>{{ workouts.sets }}</p>
-            <p>{{ workouts.reps }}</p>
-            <input class="grid-weights" placeholder="14kg" type="text" />
-          </div>
+        <p>{{ warmups.sets }}</p>
+        <p>{{ warmups.reps }}</p>
+        <input class="grid-weights" placeholder="14kg" type="text" disabled />
+      </div>
+      <div class="workout-grid-line"></div>
+      <h4 class="grid-name">Workout</h4>
+      <h6>Sets</h6>
+      <h6>Reps</h6>
+      <h6 class="grid-weights">Weight</h6>
+      <div
+        class="workout-grid-row"
+        v-for="(workouts, workoutIndex) in workout"
+        :key="workoutIndex">
+        <div class="grid-name">
+          <p>{{ workouts.name }}</p>
+          <button
+            @click="
+              () => {
+                currExercise = workouts.name
+              }
+            ">
+            <i class="fa-regular fa-circle-question"></i>
+          </button>
         </div>
+        <p>{{ workouts.sets }}</p>
+        <p>{{ workouts.reps }}</p>
+        <input class="grid-weights" placeholder="14kg" type="text" />
       </div>
     </div>
-    <div class="card">
+
+    <div class="card workout-btns">
       <button>Save & Exit <i class="fa-solid fa-save"></i></button>
       <button>Complete <i class="fa-solid fa-check"></i></button>
     </div>
