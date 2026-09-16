@@ -15,20 +15,21 @@ const workoutTypes = ['Push', 'Pull', 'Legs']
 <template>
   <section id="grid">
     <button
-      :disabled="workoutIdx > 0 && workoutIdx > firstIncompleteWorkoutIndex"
-      @click="() => handleSelectWorkout(workoutIdx)"
-      :key="workoutIdx"
-      v-for="(workout, workoutIdx) in Object.keys(workoutProgram)"
+      :disabled="workoutIndex > 0 && workoutIndex > firstIncompleteWorkoutIndex"
+      @click="() => handleSelectWorkout(workoutIndex)"
+      :key="workoutIndex"
+      v-for="(workout, workoutIndex) in Object.keys(workoutProgram)"
       class="card-button plan-card">
       <div>
         <p>
-          Day {{ workoutIdx < 9 ? '0' + (workoutIdx + 1) : workoutIdx + 1 }}
+          Day
+          {{ workoutIndex < 9 ? '0' + (workoutIndex + 1) : workoutIndex + 1 }}
         </p>
-        <i class="fa-solid fa-dumbbell" v-if="workoutIdx % 3 == 0"></i>
-        <i class="fa-solid fa-weight-hanging" v-if="workoutIdx % 3 == 1"></i>
-        <i class="fa-solid fa-bolt" v-if="workoutIdx % 3 == 2"></i>
+        <i class="fa-solid fa-dumbbell" v-if="workoutIndex % 3 == 0"></i>
+        <i class="fa-solid fa-weight-hanging" v-if="workoutIndex % 3 == 1"></i>
+        <i class="fa-solid fa-bolt" v-if="workoutIndex % 3 == 2"></i>
       </div>
-      <h3>{{ workoutTypes[workoutIdx % 3] }}</h3>
+      <h3>{{ workoutTypes[workoutIndex % 3] }}</h3>
     </button>
     <button
       :disabled="firstIncompleteWorkoutIndex != -1"
