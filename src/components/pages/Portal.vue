@@ -9,6 +9,9 @@ import { Teleport } from 'vue'
         tabindex="0"
         @click="() => {}"
         class="portal-underlay"></div>
+      <div class="portal-content">
+        <slot />
+      </div>
     </div>
   </Teleport>
 </template>
