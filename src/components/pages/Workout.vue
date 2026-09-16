@@ -18,7 +18,7 @@ function handleCloseModal() {
 </script>
 
 <template>
-  <Portal v-if="currExercise">
+  <Portal :handleCloseModal="handleCloseModal" v-if="currExercise">
     <div class="exercise-description">
       <h3>{{ currExercise }}</h3>
       <div>
