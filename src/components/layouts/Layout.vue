@@ -24,7 +24,7 @@ footer,
 main {
   padding: 1rem;
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -37,8 +37,8 @@ footer {
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-  padding: 3rem 0;
-  padding-bottom: 4rem;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
 }
 
 footer a {
@@ -54,13 +54,13 @@ footer a {
   text-decoration: none;
 }
 
-footer a img {
-  max-width: 30px;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-}
-
 footer a:hover {
   border-color: var(--color-link);
+}
+
+footer a img {
+  max-width: 30px;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
 }
 </style>
