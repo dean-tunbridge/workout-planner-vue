@@ -1,5 +1,5 @@
 <script setup>
-import { workoutProgram } from '../utils'
+import { workoutProgram } from '../../utils'
 
 defineProps({
   handleSelectWorkout: Function,
