@@ -16,7 +16,7 @@ const { workout, warmup } = workoutProgram[currWorkout]
       <h2>{{ 'push' }} Workout</h2>
     </div>
     <div class="workout-grid">
-      <h4 class="grid-name">warmup</h4>
+      <h4 class="grid-name">Warmup</h4>
       <h6>Sets</h6>
       <h6>Reps</h6>
       <h6 class="grid-weight">Weight</h6>
@@ -34,6 +34,10 @@ const { workout, warmup } = workoutProgram[currWorkout]
           <input class="grid-weights" placeholder="14kg" type="text" disabled />
         </div>
         <div class="workout-grid-line"></div>
+        <h4 class="grid-name">Workout</h4>
+        <h6>Sets</h6>
+        <h6>Reps</h6>
+        <h6 class="grid-weight">Weight</h6>
         <div
           class="workout-grid-row"
           v-for="(workouts, workoutIndex) in warmup"
@@ -49,6 +53,10 @@ const { workout, warmup } = workoutProgram[currWorkout]
           </div>
         </div>
       </div>
+    </div>
+    <div class="card">
+      <button>Save & Exit <i class="fa-solid fa-save"></i></button>
+      <button>Complete <i class="fa-solid fa-check"></i></button>
     </div>
   </section>
 </template>
