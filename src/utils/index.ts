@@ -1,4 +1,17 @@
-export const workoutProgram = {
+export type Exercise = keyof typeof exerciseDescriptions
+
+export type WorkoutExercise = {
+  name: Exercise
+  sets: number
+  reps: number
+}
+
+export type WorkoutDay = {
+  warmup: WorkoutExercise[]
+  workout: WorkoutExercise[]
+}
+
+export const workoutProgram: Record<number, WorkoutDay> = {
   0: {
     // Push
     warmup: [
