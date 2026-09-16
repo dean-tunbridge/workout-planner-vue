@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { workoutProgram } from '../../utils'
+import Portal from './Portal.vue'
 
 const currWorkout = 4
 
@@ -7,6 +8,7 @@ const { workout, warmup } = workoutProgram[currWorkout]
 </script>
 
 <template>
+  <Portal></Portal>
   <section id="workout-card">
     <div class="plan-card card">
       <div class="plan-card header">
