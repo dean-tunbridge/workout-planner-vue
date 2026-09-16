@@ -5,12 +5,18 @@ import Portal from './Portal.vue'
 
 const currWorkout = 4
 
+type Exercises = keyof typeof exerciseDescriptions
+
 const { workout, warmup } = workoutProgram[currWorkout]
 
-let currExercise = ref(null)
-let exerciseDescription = computed(
-  () => exerciseDescriptions[currExercise.value],
-)
+let currExercise = ref<Exercises | null>(null)
+
+let exerciseDescription = computed(() => {
+  if (currExercise.value === null) {
+    return null
+  }
+  exerciseDescriptions[currExercise.value]
+})
 
 function handleCloseModal() {
   currExercise.value = null

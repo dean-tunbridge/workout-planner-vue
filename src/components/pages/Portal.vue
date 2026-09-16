@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// defineProps({
-//   handleCloseModal: Function,
-// })
-
 interface Props {
   handleCloseModal: (event: PointerEvent) => void
 }
