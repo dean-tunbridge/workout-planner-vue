@@ -5,6 +5,7 @@ import Grid from './Grid.vue'
 interface Props {
   handleSelectWorkout: (index: number) => void
   firstIncompleteWorkoutIndex: number
+  handleResetPlan: (payload: PointerEvent) => void
 }
 
 const props = defineProps<Props>()
