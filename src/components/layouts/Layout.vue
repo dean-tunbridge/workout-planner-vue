@@ -6,10 +6,61 @@
     <slot />
   </main>
   <footer>
-    <h1 class="text-gradient">FOOTER</h1>
+    <small>Created by Dean</small>
+    <a href="#" target="blank">
+      <img
+        alt="profile pic"
+        src="https://www.istockphoto.com/photo/bengal-cat-lying-on-sofa-and-smiling-gm1325997570-410841353" />
+      <p>Dean Lee</p>
+    </a>
   </footer>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped></style>
+<style scoped>
+header,
+footer,
+main {
+  padding: 1rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 3rem 0;
+  padding-bottom: 4rem;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  padding-right: 0.5rem;
+  background: var(--background-muted);
+  border-radius: 4rem;
+  border: 1px solid transparent;
+  transition-duration: 200ms;
+  text-decoration: none;
+}
+
+footer a img {
+  max-width: 30px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+}
+
+footer a:hover {
+  border-color: var(--color-link);
+}
+</style>
