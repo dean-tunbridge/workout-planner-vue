@@ -7,7 +7,7 @@ interface Props {
   handleResetPlan: (payload: PointerEvent) => void
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 
 const workoutTypes = ['Push', 'Pull', 'Legs']
 </script>

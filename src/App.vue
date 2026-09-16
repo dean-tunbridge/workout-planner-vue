@@ -4,14 +4,28 @@ import Layout from './components/layouts/Layout.vue'
 import Dashboard from './components/pages/Dashboard.vue'
 import Workout from './components/pages/Workout.vue'
 
+const handleSelectWorkout = (index: number) => {
+  console.log('Selected workout:', index)
+}
+
+const firstIncompleteWorkoutIndex = 0
+
+const handleResetPlan = (event: PointerEvent) => {
+  console.log('Reset plan')
+}
+
 const currDisplay = 1
 </script>
 
 <template>
   <Layout>
-    <Welcome v-if="currDisplay == 0" />
-    <Dashboard v-if="currDisplay == 1" />
-    <Workout v-if="currDisplay == 2" />
+    <Welcome />
+    <Dashboard
+      v-if="currDisplay == 1"
+      :handle-select-workout="handleSelectWorkout"
+      :first-incomplete-workout-index="firstIncompleteWorkoutIndex"
+      :handle-reset-plan="handleResetPlan" />
+    <Workout />
   </Layout>
 </template>
 
