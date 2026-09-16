@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Teleport } from 'vue'
+const props = defineProps({})
 </script>
 <template>
   <Teleport to="#portal">
