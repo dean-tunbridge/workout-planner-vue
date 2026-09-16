@@ -31,7 +31,22 @@ const { workout, warmup } = workoutProgram[currWorkout]
           </button>
           <p>{{ warmups.sets }}</p>
           <p>{{ warmups.reps }}</p>
-          <input class="grid-weights" placeholder="14kg" type="text" />
+          <input class="grid-weights" placeholder="14kg" type="text" disabled />
+        </div>
+        <div class="workout-grid-line"></div>
+        <div
+          class="workout-grid-row"
+          v-for="(workouts, workoutIndex) in warmup"
+          :key="workoutIndex">
+          <div class="grid-name">
+            <p>{{ workouts.name }}</p>
+            <button>
+              <i class="fa-regular fa-circle-question"></i>
+            </button>
+            <p>{{ workouts.sets }}</p>
+            <p>{{ workouts.reps }}</p>
+            <input class="grid-weights" placeholder="14kg" type="text" />
+          </div>
         </div>
       </div>
     </div>
