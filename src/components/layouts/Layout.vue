@@ -12,6 +12,7 @@
         alt="profile pic"
         src="https://www.istockphoto.com/photo/bengal-cat-lying-on-sofa-and-smiling-gm1325997570-410841353" />
       <p>Dean Lee</p>
+      <i class="fa-brands fa-github"></i>
     </a>
   </footer>
 </template>
