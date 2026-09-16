@@ -1,7 +1,13 @@
 <script setup lang="ts">
-const props = defineProps({
-  handleCloseModal: Function,
-})
+// defineProps({
+//   handleCloseModal: Function,
+// })
+
+interface Props {
+  handleCloseModal: (event: PointerEvent) => void
+}
+
+defineProps<Props>()
 </script>
 <template>
   <Teleport to="#portal">
@@ -9,7 +15,7 @@ const props = defineProps({
       <div
         role="button"
         tabindex="0"
-        @click="() => {}"
+        @click="handleCloseModal"
         class="portal-underlay"></div>
       <div class="portal-content">
         <slot />
