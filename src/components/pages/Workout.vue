@@ -1,14 +1,27 @@
 <script setup lang="ts">
-import { workoutProgram } from '../../utils'
+import { ref } from 'vue'
+import { workoutProgram, exerciseDescriptions } from '../../utils'
 import Portal from './Portal.vue'
 
 const currWorkout = 4
 
 const { workout, warmup } = workoutProgram[currWorkout]
+let exerciseDescription = exerciseDescriptions[currExercise]
+
+let currExercise = ref()
 </script>
 
 <template>
-  <Portal></Portal>
+  <Portal v-if="currExercise">
+    <div class="exercise-description">
+      <h3>{{ currExercise }}</h3>
+      <div>
+        <small>Description</small>
+        <p>{{ exerciseDescription }}</p>
+      </div>
+      <button>Close <i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </Portal>
   <section id="workout-card">
     <div class="plan-card card">
       <div class="plan-card header">
