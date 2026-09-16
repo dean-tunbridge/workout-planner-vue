@@ -21,11 +21,10 @@ const currDisplay = 1
   <Layout>
     <Welcome />
     <Dashboard
-      v-if="currDisplay == 1"
       :handle-select-workout="handleSelectWorkout"
       :first-incomplete-workout-index="firstIncompleteWorkoutIndex"
       :handle-reset-plan="handleResetPlan" />
-    <Workout />
+    <Workout v-if="currDisplay == 1" />
   </Layout>
 </template>
 
