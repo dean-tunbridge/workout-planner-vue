@@ -6,10 +6,6 @@ import Workout from './components/pages/Workout.vue'
 import { ref } from 'vue'
 import { workoutProgram, type ExerciseData } from './utils/index.ts'
 
-const handleSelectWorkout = (index: number) => {
-  console.log('Selected workout:', index)
-}
-
 const firstIncompleteWorkoutIndex = 0
 
 const handleResetPlan = () => {
@@ -29,6 +25,19 @@ for (let workoutIndex in workoutProgram) {
 const currDisplay = ref(2)
 const data = ref(defaultData)
 const currWorkout = ref(-1)
+
+function handleDisplayChange(index: number) {
+  currDisplay.value = index
+}
+
+function handleSelectWorkout(index: number) {
+  currDisplay.value = 3
+  currWorkout.value = index
+}
+
+function handleSaveWorkout() {
+  localStorage.setItem('workouts', JSON.stringify(data.value))
+}
 </script>
 
 <template>
