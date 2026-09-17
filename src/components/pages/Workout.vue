@@ -7,6 +7,11 @@ import {
 } from '../../utils'
 import Portal from './Portal.vue'
 
+const props = defineProps({
+  data: Object,
+  currWorkout: Number,
+})
+
 const currWorkout = 4
 
 const { workout, warmup } = workoutProgram[currWorkout]

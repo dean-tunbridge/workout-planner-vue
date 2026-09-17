@@ -25,6 +25,7 @@ for (let workoutIndex in workoutProgram) {
     defaultData[workoutIndex][e.name] = ''
   }
 }
+
 const currDisplay = ref(2)
 const data = ref(defaultData)
 const currWorkout = ref(-1)
@@ -37,7 +38,10 @@ const currWorkout = ref(-1)
       :handle-select-workout="handleSelectWorkout"
       :first-incomplete-workout-index="firstIncompleteWorkoutIndex"
       :handle-reset-plan="handleResetPlan" />
-    <Workout :data="data" :currWorkout="currWorkout" v-if="currDisplay == 1" />
+    <Workout
+      :data="data"
+      :currWorkout="currWorkout"
+      v-if="workoutProgram?.[currWorkout]" />
   </Layout>
 </template>
 
