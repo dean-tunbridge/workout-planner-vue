@@ -4,13 +4,16 @@ import {
   workoutProgram,
   exerciseDescriptions,
   type Exercise,
+  type WorkoutExercise,
 } from '../../utils'
 import Portal from './Portal.vue'
 
-const props = defineProps({
-  data: Object,
-  currWorkout: Number,
-})
+interface Props {
+  data: WorkoutExercise
+  currWorkout: number
+}
+
+defineProps<Props>()
 
 const currWorkout = 4
 
@@ -97,7 +100,11 @@ function handleCloseModal() {
         </div>
         <p>{{ workouts.sets }}</p>
         <p>{{ workouts.reps }}</p>
-        <input class="grid-weights" placeholder="14kg" type="text" />
+        <input
+          v-model="data[currWorkout][workouts.name]"
+          class="grid-weights"
+          placeholder="14kg"
+          type="text" />
       </div>
     </div>
 
