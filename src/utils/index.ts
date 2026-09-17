@@ -1,4 +1,5 @@
 export type Exercise = keyof typeof exerciseDescriptions
+export type ExerciseData = Partial<Record<Exercise, string>>
 
 export type WorkoutExercise = {
   name: Exercise
