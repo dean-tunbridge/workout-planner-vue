@@ -22,7 +22,7 @@ for (let workoutIndex in workoutProgram) {
   }
 }
 
-const currDisplay = ref(2)
+const currDisplay = ref(1)
 const data = ref(defaultData)
 const currWorkout = ref(-1)
 
@@ -37,13 +37,19 @@ function handleSelectWorkout(index: number) {
 
 function handleSaveWorkout() {
   localStorage.setItem('workouts', JSON.stringify(data.value))
+
+  currDisplay.value = 2
+  currWorkout.value = -1
 }
 </script>
 
 <template>
   <Layout>
-    <Welcome />
+    <Welcome
+      :handleDisplayChange="handleDisplayChange"
+      v-if="currDisplay == 1" />
     <Dashboard
+      v-if="currDisplay == 2"
       :handle-select-workout="handleSelectWorkout"
       :first-incomplete-workout-index="firstIncompleteWorkoutIndex"
       :handle-reset-plan="handleResetPlan" />
