@@ -3,10 +3,8 @@ import Welcome from './components/pages/Welcome.vue'
 import Layout from './components/layouts/Layout.vue'
 import Dashboard from './components/pages/Dashboard.vue'
 import Workout from './components/pages/Workout.vue'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { workoutProgram, type ExerciseData } from './utils/index.ts'
-
-const firstIncompleteWorkoutIndex = 0
 
 const handleResetPlan = () => {
   console.log('Reset plan')
@@ -25,6 +23,25 @@ for (let workoutIndex in workoutProgram) {
 const currDisplay = ref(1)
 const data = ref(defaultData)
 const currWorkout = ref(-1)
+
+const isWorkoutComplete = computed(() => {
+  const currentWorkout = data.value?.[currWorkout.value]
+  if (!currentWorkout) return false
+
+  const isComplete = Object.values(currentWorkout).every((ex) => !!ex)
+  return isComplete
+})
+
+const firstIncompleteWorkoutIndex = computed(() => {
+  const allWorkouts = data.value
+  if (!allWorkouts) return -1
+
+  for (const [index, workout] of Object.entries(allWorkouts)) {
+    const isComplete = Object.values(workout).every((ex) => !!ex)
+    if (!isComplete) return parseInt(index)
+  }
+  return -1
+})
 
 function handleDisplayChange(index: number) {
   currDisplay.value = index
