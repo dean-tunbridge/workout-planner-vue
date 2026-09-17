@@ -10,6 +10,8 @@ import Portal from './Portal.vue'
 const props = defineProps({
   data: Object,
   currWorkout: Number,
+  handleSaveWorkout: Function,
+  isWorkoutComplete: Boolean,
 })
 
 const currWorkout = 4
@@ -106,8 +108,12 @@ function handleCloseModal() {
     </div>
 
     <div class="card workout-btns">
-      <button>Save & Exit <i class="fa-solid fa-save"></i></button>
-      <button>Complete <i class="fa-solid fa-check"></i></button>
+      <button @click="handleSaveWorkout">
+        Save & Exit <i class="fa-solid fa-save"></i>
+      </button>
+      <button @click="handleSaveWorkout">
+        Complete <i class="fa-solid fa-check"></i>
+      </button>
     </div>
   </section>
 </template>
