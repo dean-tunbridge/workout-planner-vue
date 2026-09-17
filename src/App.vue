@@ -28,8 +28,8 @@ const isWorkoutComplete = computed(() => {
   const currentWorkout = data.value?.[currWorkout.value]
   if (!currentWorkout) return false
 
-  const isComplete = Object.values(currentWorkout).every((ex) => !!ex)
-  return isComplete
+  const isCompleteCheck = Object.values(currentWorkout).every((ex) => !!ex)
+  return isCompleteCheck
 })
 
 const firstIncompleteWorkoutIndex = computed(() => {
@@ -71,6 +71,8 @@ function handleSaveWorkout() {
       :firstIncompleteWorkoutIndex="firstIncompleteWorkoutIndex"
       :handleResetPlan="handleResetPlan" />
     <Workout
+      :handleSaveWorkout="handleSaveWorkout"
+      :isWorkoutComplete="isWorkoutComplete"
       :data="data"
       :currWorkout="currWorkout"
       v-if="workoutProgram?.[currWorkout]" />
