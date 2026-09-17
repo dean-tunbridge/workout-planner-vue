@@ -1,3 +1,11 @@
+<script setup lang="ts">
+interface Props {
+  handleDisplayChange: Function
+}
+
+defineProps<Props>()
+</script>
+
 <template>
   <section id="welcome">
     <div class="benefits">
@@ -22,12 +30,10 @@
       <h3>🔥 Your Challenge</h3>
       <p>Complete all the workouts and track your progress along the way!</p>
       <p>Do you accept?</p>
-      <button>Begin &RightArrow;</button>
+      <button @click="() => handleDisplayChange(2)">Begin &RightArrow;</button>
     </div>
   </section>
 </template>
-
-<script setup lang="ts"></script>
 
 <style scoped>
 #welcome,
