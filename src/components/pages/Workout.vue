@@ -4,16 +4,13 @@ import {
   workoutProgram,
   exerciseDescriptions,
   type Exercise,
-  type WorkoutExercise,
 } from '../../utils'
 import Portal from './Portal.vue'
 
-interface Props {
-  data: WorkoutExercise
-  currWorkout: number
-}
-
-defineProps<Props>()
+const props = defineProps({
+  data: Object,
+  currWorkout: Number,
+})
 
 const currWorkout = 4
 
