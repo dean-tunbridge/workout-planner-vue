@@ -50,9 +50,9 @@ function handleSaveWorkout() {
       v-if="currDisplay == 1" />
     <Dashboard
       v-if="currDisplay == 2"
-      :handle-select-workout="handleSelectWorkout"
-      :first-incomplete-workout-index="firstIncompleteWorkoutIndex"
-      :handle-reset-plan="handleResetPlan" />
+      :handleSelectWorkout="handleSelectWorkout"
+      :firstIncompleteWorkoutIndex="firstIncompleteWorkoutIndex"
+      :handleResetPlan="handleResetPlan" />
     <Workout
       :data="data"
       :currWorkout="currWorkout"

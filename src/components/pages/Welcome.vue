@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  handleDisplayChange: Function
+  handleDisplayChange: (index: number) => void
 }
 
 defineProps<Props>()
