@@ -110,7 +110,7 @@ function handleCloseModal() {
       <button @click="handleSaveWorkout">
         Save & Exit <i class="fa-solid fa-save"></i>
       </button>
-      <button @click="handleSaveWorkout">
+      <button :disabled="isWorkoutComplete" @click="handleSaveWorkout">
         Complete <i class="fa-solid fa-check"></i>
       </button>
     </div>
