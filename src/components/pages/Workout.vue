@@ -4,19 +4,18 @@ import {
   workoutProgram,
   exerciseDescriptions,
   type Exercise,
+  type ExerciseData,
 } from '../../utils'
 import Portal from './Portal.vue'
 
-const props = defineProps({
-  data: Object,
-  currWorkout: Number,
-  handleSaveWorkout: Function,
-  isWorkoutComplete: Boolean,
-})
+const props = defineProps<{
+  data: Record<number, ExerciseData>
+  currWorkout: number
+  handleSaveWorkout: () => void
+  isWorkoutComplete: boolean
+}>()
 
-const currWorkout = 4
-
-const { workout, warmup } = workoutProgram[currWorkout]
+const { workout, warmup } = workoutProgram[props.currWorkout]
 
 let currExercise = ref<Exercise | null>(null)
 
