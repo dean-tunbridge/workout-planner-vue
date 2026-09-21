@@ -88,8 +88,8 @@
   --color-info: '';
   --color-highlight: #fef9c3;
 
-  --gradient-start: #9580ff;
-  --gradient-end: #80ffea;
+  --gradient-start: #29325b;
+  --gradient-end: #4649af;
 
   --border-primary: #29325b;
   --border-secondary: #323c71;
@@ -125,7 +125,7 @@ body {
 }
 
 /* Special */
-.text-gradient {
+.text-gradient a {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -137,6 +137,9 @@ body {
   background-size: 100%;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 /* Typography */
