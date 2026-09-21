@@ -17,7 +17,7 @@ const props = defineProps<{
 
 const { workout, warmup } = workoutProgram[props.currWorkout]
 
-const workoutType = ['push', 'pull', 'legs']
+const workoutType = ['Push', 'Pull', 'Legs']
 
 let currExercise = ref<Exercise | null>(null)
 
