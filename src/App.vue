@@ -6,10 +6,6 @@ import Workout from './components/pages/Workout.vue'
 import { computed, ref } from 'vue'
 import { workoutProgram, type ExerciseData } from './utils/index.ts'
 
-const handleResetPlan = () => {
-  console.log('Reset plan')
-}
-
 const defaultData: Record<number, ExerciseData> = {}
 for (let workoutIndex in workoutProgram) {
   const workoutData = workoutProgram[workoutIndex]
@@ -62,6 +58,8 @@ function handleSaveWorkout() {
 function handleResetPlan() {
   currDisplay.value = 2
   currWorkout.value = -1
+  data.value = defaultData
+  localStorage.removeItem('workouts')
 }
 </script>
 
