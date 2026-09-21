@@ -30,11 +30,15 @@ const isWorkoutComplete = computed(() => {
 
 const firstIncompleteWorkoutIndex = computed(() => {
   const allWorkouts = data.value
-  if (!allWorkouts) return -1
+  if (!allWorkouts) {
+    return -1
+  }
 
   for (const [index, workout] of Object.entries(allWorkouts)) {
     const isComplete = Object.values(workout).every((ex) => !!ex)
-    if (!isComplete) return parseInt(index)
+    if (!isComplete) {
+      return parseInt(index)
+    }
   }
   return -1
 })
