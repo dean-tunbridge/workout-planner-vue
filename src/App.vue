@@ -3,7 +3,7 @@ import Welcome from './components/pages/Welcome.vue'
 import Layout from './components/layouts/Layout.vue'
 import Dashboard from './components/pages/Dashboard.vue'
 import Workout from './components/pages/Workout.vue'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { workoutProgram, type ExerciseData } from './utils/index.ts'
 
 const defaultData: Record<number, ExerciseData> = {}
@@ -61,6 +61,15 @@ function handleResetPlan() {
   data.value = defaultData
   localStorage.removeItem('workouts')
 }
+
+onMounted(() => {
+  if (!localStorage) return
+  if (localStorage.getItem('workouts')) {
+    const savedData = JSON.parse(localStorage.getItem('workouts') || 'null')
+    data.value = savedData
+    currDisplay.value = 2
+  }
+})
 </script>
 
 <template>
