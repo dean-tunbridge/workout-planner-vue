@@ -8,24 +8,22 @@ import {
 } from '../../utils'
 import Portal from './Portal.vue'
 
-const props = defineProps<{
+const { data, currWorkout } = defineProps<{
   data: Record<number, ExerciseData>
   currWorkout: number
   handleSaveWorkout: () => void
   isWorkoutComplete: boolean
 }>()
 
-const { workout, warmup } = workoutProgram[props.currWorkout]
-
 const workoutType = ['Push', 'Pull', 'Legs']
+const { workout, warmup } = workoutProgram[currWorkout]
 
 let currExercise = ref<Exercise | null>(null)
 
 let exerciseDescription = computed(() => {
   if (currExercise.value === null) {
     return null
-  }
-  exerciseDescriptions[currExercise.value]
+  } else return exerciseDescriptions[currExercise.value]
 })
 
 function handleCloseModal() {
