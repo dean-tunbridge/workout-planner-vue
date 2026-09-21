@@ -40,6 +40,7 @@ const todaysFact = gymHealthFacts[randomNumber]
 .tip-container div,
 #dashboard {
   display: flex;
+  align-items: center;
 }
 
 .tip-container,
