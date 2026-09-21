@@ -47,7 +47,9 @@ function handleCloseModal() {
   <section id="workout-card">
     <div class="plan-card card">
       <div class="plan-card-header">
-        <p>Day {{ currWorkout < 9 ? '0' + currWorkout : currWorkout }}</p>
+        <p>
+          Day {{ currWorkout < 9 ? '0' + (currWorkout + 1) : currWorkout + 1 }}
+        </p>
         <i class="fa-solid fa-dumbbell"></i>
       </div>
       <h2>{{ 'push' }} Workout</h2>
