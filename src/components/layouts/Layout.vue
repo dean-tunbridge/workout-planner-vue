@@ -2,7 +2,7 @@
 
 <template>
   <header class="text-gradient">
-    <h1 class="text-gradient">HEADER</h1>
+    <h1 class="text-gradient">BONSON'S GYM</h1>
   </header>
   <main>
     <slot />
@@ -31,6 +31,15 @@ main {
 
 main {
   flex: 1;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 2rem 0;
+  padding-bottom: 3rem;
 }
 
 footer {
