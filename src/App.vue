@@ -54,7 +54,6 @@ function handleSelectWorkout(index: number) {
 
 function handleSaveWorkout() {
   localStorage.setItem('workouts', JSON.stringify(data.value))
-
   currDisplay.value = 2
   currWorkout.value = -1
 }
@@ -62,7 +61,7 @@ function handleSaveWorkout() {
 function handleResetPlan() {
   currDisplay.value = 2
   currWorkout.value = -1
-  data.value = structuredClone(defaultData)
+  data.value = defaultData
   localStorage.removeItem('workouts')
 }
 
