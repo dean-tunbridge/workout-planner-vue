@@ -58,6 +58,11 @@ function handleSaveWorkout() {
   currDisplay.value = 2
   currWorkout.value = -1
 }
+
+function handleResetPlan() {
+  currDisplay.value = 2
+  currWorkout.value = -1
+}
 </script>
 
 <template>
