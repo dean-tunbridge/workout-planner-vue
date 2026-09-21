@@ -25,9 +25,9 @@ const workoutTypes = ['Push', 'Pull', 'Legs']
           Day
           {{ workoutIndex < 9 ? '0' + (workoutIndex + 1) : workoutIndex + 1 }}
         </p>
-        <i class="fa-solid fa-dumbbell" v-if="workoutIndex % 3 == 0"></i>
-        <i class="fa-solid fa-weight-hanging" v-if="workoutIndex % 3 == 1"></i>
-        <i class="fa-solid fa-bolt" v-if="workoutIndex % 3 == 2"></i>
+        <i v-if="workoutIndex % 3 == 0"></i>
+        <i v-if="workoutIndex % 3 == 1"></i>
+        <i v-if="workoutIndex % 3 == 2"></i>
       </div>
       <h3>{{ workoutTypes[workoutIndex % 3] }}</h3>
     </button>
