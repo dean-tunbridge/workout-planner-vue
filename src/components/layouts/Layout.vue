@@ -2,7 +2,7 @@
 
 <template>
   <header class="text-gradient">
-    <h1 class="text-gradient">BONSON'S BRO SPLIT</h1>
+    <a href="/"><h1 class="text-gradient">BONSON'S BRO SPLIT</h1></a>
   </header>
   <main>
     <slot />
