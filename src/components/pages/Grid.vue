@@ -4,7 +4,7 @@ import { workoutProgram } from '../../utils'
 interface Props {
   handleSelectWorkout: (index: number) => void
   firstIncompleteWorkoutIndex: number
-  handleResetPlan: (payload: PointerEvent) => void
+  handleResetPlan: () => void
 }
 
 defineProps<Props>()

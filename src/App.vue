@@ -62,7 +62,7 @@ function handleSaveWorkout() {
 function handleResetPlan() {
   currDisplay.value = 2
   currWorkout.value = -1
-  data.value = defaultData
+  data.value = structuredClone(defaultData)
   localStorage.removeItem('workouts')
 }
 

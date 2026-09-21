@@ -4,7 +4,7 @@ import Grid from './Grid.vue'
 
 interface Props {
   handleSelectWorkout: (index: number) => void
-  handleResetPlan: (payload: PointerEvent) => void
+  handleResetPlan: () => void
   firstIncompleteWorkoutIndex: number
 }
 
